@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'repertoire',
+    loadChildren: () => import('./repertoire/repertoire.module').then( m => m.RepertoirePageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Repertoire</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Nom et Prénoms</ion-label>
+      <ion-input type="text" id="NomPrenoms"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>E-mail</ion-label>
+      <ion-input type="text" id="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Téléphone</ion-label>
+      <ion-input type="text" id="Contact"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+  
+  <div padding>
+    <ion-button block (click)="AjoutContact()">Enregistrer</ion-button>
+    <ion-button block color="light"  (click)="InitialiseSaisie()"  >Annuler</ion-button>
+  </div>
+
+
+  <ion-list>
+    <ion-item *ngFor="let contact of  AfficherContacts() ; let i=index">  
+      <ion-thumbnail item-start>
+        <img src="https://th.bing.com/th/id/R5a556a5517e56eed7fe8dc5cdfd681d5?rik=2W9FqnZfZi1BHw&riu=http%3a%2f%2fwww.photo-emedia.fr%2fmedia%2fimages%2fupload%2fIDT+BB.jpg&ehk=gXbFF5lucavqL%2fKJAa1nbLxeVru1Kl31dZp45pGAxGY%3d&risl=&pid=ImgRaw" class="img-circle">
+      </ion-thumbnail>
+      <p style="margin-left: 15px;margin-right: 15px;">{{contact.NOMPRENOMS}}</p><br><br>
+      <ion-button  color="warning" >Détail</ion-button>
+      <ion-button  color="danger" (click)="removeContact(i)" >Supprimer</ion-button>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
